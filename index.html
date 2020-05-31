@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="validate.min.js"></script>
+	<script src="script.js"></script>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+		}
+		.input-block {
+			height: 40px;
+			margin: 5px 0px;
+			display: flex;
+			flex-direction: column;
+			width: 170px;
+		}
+		.parameters {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		
+		.parameters_input-block {
+			margin: 5px 10px;
+		}
+		table {
+			border-collapse: collapse;
+		}
+
+		table, th, td {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="parameters">
+			<div class="input-block parameters_input-block">
+				<label for="room-temperature">Room temperature:</label>
+				<input id="room-temperature" type="number" />
+			</div>
+			<div class="input-block parameters_input-block">
+				<label for="min-input-temperature">Min input temperature:</label>
+				<input id="min-input-temperature" type="number" />
+			</div>
+			<div class="input-block parameters_input-block">
+				<label for="output-temperature">Output temperature:</label>
+				<input id="output-temperature" type="number" />
+			</div>
+			<div class="input-block parameters_input-block">
+				<label for="volume">Volume:</label>
+				<input id="volume" type="number" />
+			</div>
+			<div class="input-block parameters_input-block">
+				<label for="recuperator-efficiency">Recuperator efficiency %:</label>
+				<input id="recuperator-efficiency" type="number" />
+			</div>
+		</div>
+		
+		<table class="calculation-table">
+			<tr>
+				<td>Description</td>
+				<td>Without recuperator</td>
+				<td>With recuperator</td>
+			</tr>
+			
+			<tr>
+				<td colspan="3" id="calculation-period"></td>
+			</tr>
+			
+			<tr>
+				<td>Power consumption (kW)</td>
+				<td id="consumption-without-recuperator"></td>
+				<td id="consumption-with-recuperator"></td>
+			</tr>
+		</table>
+		<div style="margin-top: 25px; width: 150px; height: 20px; background-color: green;" onclick="calc()">Calculate</div>
+	</div>	
+</body>
+</html>
