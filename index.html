@@ -58,6 +58,13 @@
 			</div>
 		</div>
 		
+		<div class="parameters">
+			<div class="input-block parameters_input-block">
+				<label for="energy-price">Price 1 kW:</label>
+				<input id="energy-price" type="number" />
+			</div>
+		</div>
+		
 		<table class="calculation-table">
 			<tr>
 				<td>Description</td>
@@ -73,6 +80,11 @@
 				<td>Power consumption (kW)</td>
 				<td id="consumption-without-recuperator"></td>
 				<td id="consumption-with-recuperator"></td>
+			</tr>
+			<tr>
+				<td>Cost</td>
+				<td id="cost-without-recuperator"></td>
+				<td id="cost-with-recuperator"></td>
 			</tr>
 		</table>
 		<div style="margin-top: 25px; width: 150px; height: 20px; background-color: green;" onclick="calc()">Calculate</div>

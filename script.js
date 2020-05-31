@@ -10,6 +10,7 @@ function calc() {
 	let output_temperature = +document.getElementById('output-temperature').value;
 	let volume = +document.getElementById('volume').value;
 	let recuperator_efficiency = +document.getElementById('recuperator-efficiency').value / 100;
+	let price = +document.getElementById('energy-price').value;
 
 	
 	let totalConsumption = 0;
@@ -53,10 +54,17 @@ function calc() {
 	let cell_consumption_without_recuperator = document.getElementById('consumption-without-recuperator');
 	let cell_consumption_with_recuperator = document.getElementById('consumption-with-recuperator');
 	let calculation_period = document.getElementById('calculation-period');
+	let cost_without_recuperator = document.getElementById('cost-without-recuperator');
+	let cost_with_recuperator = document.getElementById('cost-with-recuperator');
+	
+	//let  = document.getElementById('');
 	
 	cell_consumption_without_recuperator.textContent = totalConsumptionWithoutRecupirator.toFixed(2);
 	cell_consumption_with_recuperator.textContent = totalConsumption.toFixed(2);
 	calculation_period.textContent = 'Period from ' + minDate.toLocaleString("RU-ru") + ' to ' + maxDate.toLocaleString("RU-ru"); 
+	
+	cost_without_recuperator.textContent = totalConsumptionWithoutRecupirator * price;
+	cost_with_recuperator.textContent = totalConsumption * price;
 }
 
 function getHeatingConsumption(volume, from, to) {
