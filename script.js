@@ -63,8 +63,8 @@ function calc() {
 	cell_consumption_with_recuperator.textContent = totalConsumption.toFixed(2);
 	calculation_period.textContent = 'Period from ' + minDate.toLocaleString("RU-ru") + ' to ' + maxDate.toLocaleString("RU-ru"); 
 	
-	cost_without_recuperator.textContent = totalConsumptionWithoutRecupirator * price;
-	cost_with_recuperator.textContent = totalConsumption * price;
+	cost_without_recuperator.textContent = (totalConsumptionWithoutRecupirator * price).toFixed(2);
+	cost_with_recuperator.textContent = (totalConsumption * price).toFixed(2);
 }
 
 function getHeatingConsumption(volume, from, to) {
